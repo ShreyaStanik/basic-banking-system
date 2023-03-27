@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nodeapp-deployment
+  name: basic-banking-system
   labels:
     app: nodeapp
 spec:
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nodeserver
-        image: dakshaka/nodeapp:latest
+        image: shreyastanik/nodeapp:latest
         ports:
         - containerPort: 3000
         
@@ -30,7 +30,7 @@ metadata:
 spec:
   selector:
     app: nodeapp 
-  type: LoadBalancer
+  type: nodejs
   ports:
   - protocol: TCP
     port: 5000
